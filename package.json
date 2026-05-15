@@ -1,0 +1,20 @@
+{
+  "name": "project",
+  "version": "1.0.0",
+  "description": "Full-stack project with React frontend and Node.js backend",
+  "private": true,
+  "workspaces": [
+    "Frontend",
+    "Backend"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace=Frontend",
+    "server": "npm run server --workspace=Backend",
+    "build": "npm run build --workspace=Frontend",
+    "dev:all": "concurrently \"npm run dev --workspace=Frontend\" \"npm run server --workspace=Backend\"",
+    "install:all": "npm install && npm install --workspace=Frontend && npm install --workspace=Backend"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  }
+}
