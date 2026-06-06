@@ -59,7 +59,7 @@ const Contact = () => {
     setIsSubmitting(true);
     
     try {
-      const response = await fetch('http://localhost:4000/api/contact', {
+      const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -75,10 +75,10 @@ const Contact = () => {
       console.log('Success:', data);
       
       setFormData({ name: '', email: '', message: '' });
-      alert('✓ Message sent successfully! Your data has been saved to MongoDB.');
+      alert('✓ Message sent successfully! I will get back to you soon.');
     } catch (error) {
       console.error('Error:', error);
-      alert('❌ Error sending message. Make sure the backend server is running on port 4000.');
+      alert('❌ Error sending message. Please try again or email me directly.');
     } finally {
       setIsSubmitting(false);
     }

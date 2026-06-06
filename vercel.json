@@ -1,4 +1,21 @@
 {
-  "buildCommand": "cd Frontend && npm run build",
-  "outputDirectory": "Frontend/dist"
+  "version": 2,
+  "buildCommand": "cd Frontend && npm install && npm run build",
+  "outputDirectory": "Frontend/dist",
+  "functions": {
+    "Backend/server.js": {
+      "runtime": "nodejs20.x"
+    }
+  },
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "Backend/server.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ]
 }
+
